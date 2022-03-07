@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 0.1, 0.1, 0.1 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 0.1, 0.1, 0.1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="ARVROrigin" type="ARVROrigin" parent="."]
+
+[node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
+
+[node name="LeftController" type="ARVRController" parent="ARVROrigin"]
+
+[node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/LeftController"]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="RightController" type="ARVRController" parent="ARVROrigin"]
+controller_id = 2
+
+[node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/RightController"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Enter VR"
