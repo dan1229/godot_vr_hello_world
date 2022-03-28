@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://art/canglong.glb" type="PackedScene" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
 
 [sub_resource type="CylinderShape" id=1]
 height = 5.11507
 
 [node name="Player" type="KinematicBody"]
+script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 4, 0, 0, 0, -2.78048e-07, -2.5, 0, 6.361, -1.09278e-07, 0, 0.327605, 2.76915 )
