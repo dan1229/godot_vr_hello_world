@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://art/canglong.glb" type="PackedScene" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -8,9 +8,14 @@ margin = 0.001
 radius = 2.5
 height = 31.5
 
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 0.1, 0.1, 0.1 )
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 0.1, 0.1, 0.1 )
+
 [node name="Player" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.462537, 0 )
-motion/sync_to_physics = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.114468, 0 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -21,3 +26,21 @@ shape = SubResource( 1 )
 
 [node name="canglong" parent="Pivot" instance=ExtResource( 1 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+
+[node name="ARVROrigin" type="ARVROrigin" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3, 0 )
+
+[node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
+
+[node name="LeftController" type="ARVRController" parent="ARVROrigin"]
+
+[node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/LeftController"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="RightController" type="ARVRController" parent="ARVROrigin"]
+controller_id = 2
+
+[node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/RightController"]
+mesh = SubResource( 3 )
+material/0 = null

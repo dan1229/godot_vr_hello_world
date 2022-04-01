@@ -1,13 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-
-[sub_resource type="CubeMesh" id=1]
-size = Vector3( 0.1, 0.1, 0.1 )
-
-[sub_resource type="CubeMesh" id=2]
-size = Vector3( 0.1, 0.1, 0.1 )
 
 [sub_resource type="Theme" id=6]
 
@@ -30,25 +24,6 @@ transform = Transform( 1, 0, 0, 0, -0.787376, 0.616473, 0, -0.616473, -0.787376,
 shadow_enabled = true
 shadow_color = Color( 0.862745, 0.647059, 0.898039, 1 )
 
-[node name="ARVROrigin" type="ARVROrigin" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -31.0387 )
-
-[node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 17.143, -65.2782 )
-
-[node name="LeftController" type="ARVRController" parent="ARVROrigin"]
-
-[node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/LeftController"]
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="RightController" type="ARVRController" parent="ARVROrigin"]
-controller_id = 2
-
-[node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/RightController"]
-mesh = SubResource( 2 )
-material/0 = null
-
 [node name="Button" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -62,7 +37,7 @@ theme = SubResource( 6 )
 text = "Enter VR"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3015, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3015, -20.6354 )
 
 [node name="Ground" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0969658, 0 )
@@ -75,5 +50,3 @@ shape = SubResource( 3 )
 transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, -1, 0 )
 mesh = SubResource( 4 )
 material/0 = SubResource( 8 )
-
-[connection signal="body_entered" from="Ground" to="Player" method="_on_Ground_body_entered"]

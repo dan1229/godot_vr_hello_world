@@ -28,8 +28,8 @@ func _ready() -> void:
 		# be called sometime later to let us know if it's supported or not.
 		webxr_interface.is_session_supported("immersive-vr")
  
-	$ARVROrigin/LeftController.connect("button_pressed", self, "_on_LeftController_button_pressed")
-	$ARVROrigin/LeftController.connect("button_release", self, "_on_LeftController_button_release")
+	#$ARVROrigin/LeftController.connect("button_pressed", self, "_on_LeftController_button_pressed")
+	#$ARVROrigin/LeftController.connect("button_release", self, "_on_LeftController_button_release")
 
 func _on_LeftController_button_pressed(button: int) -> void:
 	print ("Button pressed: " + str(button))
@@ -87,7 +87,6 @@ func _webxr_session_ended() -> void:
  
 func _webxr_session_failed(message: String) -> void:
 	OS.alert("Failed to initialize: " + message)
- 
  
 func _process(delta: float) -> void:
 	var left_controller_id = 100

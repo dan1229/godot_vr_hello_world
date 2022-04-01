@@ -1,4 +1,4 @@
-extends KinematicBody
+extends ARVRCamera
 
 # How fast the player moves in meters per second.
 export var speed = 14
@@ -7,7 +7,6 @@ export var fall_acceleration = 75
 # Vertical impulse applied to the character upon jumping in meters per second.
 export var jump_impulse = 20
 
-onready var camera = $Pivot/Camera
 
 var velocity = Vector3.ZERO
 
@@ -31,16 +30,13 @@ func _physics_process(delta):
 		$Pivot.look_at(translation + direction, Vector3.UP)
 
 	# Ground velocity
-	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
+	velocity.x += direction.x * speed
+	velocity.z += direction.z * speed
 	
-	# Jumping
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y += jump_impulse
-		
 	# fall
 	velocity.y -= fall_acceleration * delta
 
 	# Moving the character
 	velocity = move_and_slide(velocity, Vector3.UP)
 	
+		
