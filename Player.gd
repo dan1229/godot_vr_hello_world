@@ -4,6 +4,9 @@ extends KinematicBody
 export var speed = 14
 # The downward acceleration when in the air, in meters per second squared.
 export var fall_acceleration = 75
+# Vertical impulse applied to the character upon jumping in meters per second.
+export var jump_impulse = 20
+
 
 var velocity = Vector3.ZERO
 
@@ -17,8 +20,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_left"):
 		direction.x -= 1
 	if Input.is_action_pressed("move_back"):
-		# Notice how we are working with the vector's x and z axes.
-		# In 3D, the XZ plane is the ground plane.
 		direction.z += 1
 	if Input.is_action_pressed("move_forward"):
 		direction.z -= 1
@@ -29,9 +30,22 @@ func _physics_process(delta):
 		$Pivot.look_at(translation + direction, Vector3.UP)
 
 	# Ground velocity
-	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
-	# Vertical velocity
+	velocity.x += direction.x * speed
+	velocity.z += direction.z * speed
+	
+	# Jumping
+	if is_on_floor() and Input.is_action_just_pressed("jump"):
+		velocity.y += jump_impulse
+		
+	# fall
 	velocity.y -= fall_acceleration * delta
+
 	# Moving the character
 	velocity = move_and_slide(velocity, Vector3.UP)
+	
+		
+
+
+
+func _on_Ground_body_entered(body):
+	print("HEYOOOOOO")
