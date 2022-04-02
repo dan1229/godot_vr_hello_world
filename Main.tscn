@@ -39,7 +39,7 @@ text = "Enter VR"
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3015, -20.6354 )
 
-[node name="Ground" type="Area" parent="."]
+[node name="Ground" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0969658, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]

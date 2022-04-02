@@ -42,5 +42,5 @@ func _physics_process(delta):
 	velocity.y -= fall_acceleration * delta
 
 	# Moving the character
-	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity = move_and_slide_with_snap(velocity, Vector3.UP)
 	
