@@ -11,7 +11,7 @@ onready var camera = $Pivot/Camera
 
 var velocity = Vector3.ZERO
 
-func _physics_process(delta):
+func get_input_direction():
 	# We create a local variable to store the input direction.
 	var direction = Vector3.ZERO
 
@@ -25,10 +25,17 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_forward"):
 		direction.z -= 1
 		
+	return direction
+	
+	
+func _physics_process(delta):
+	var direction = get_input_direction()
+	
 	# normalize direction
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
 		$Pivot.look_at(translation + direction, Vector3.UP)
+		look_at(transform.origin + velocity, Vector3.UP)		
 
 	# Ground velocity
 	velocity.x = direction.x * speed

@@ -25,7 +25,7 @@ shape = SubResource( 1 )
 [node name="Pivot" type="Spatial" parent="."]
 
 [node name="canglong" parent="Pivot" instance=ExtResource( 1 )]
-transform = Transform( -0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, 0 )
+transform = Transform( -0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, 7.21944 )
 
 [node name="ARVROrigin" type="ARVROrigin" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.58636, 0 )
