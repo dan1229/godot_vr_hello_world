@@ -25,21 +25,23 @@ shape = SubResource( 1 )
 [node name="Pivot" type="Spatial" parent="."]
 
 [node name="canglong" parent="Pivot" instance=ExtResource( 1 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+transform = Transform( -0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, 0 )
 
 [node name="ARVROrigin" type="ARVROrigin" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.58636, 0 )
 
 [node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793262, 0 )
 
 [node name="LeftController" type="ARVRController" parent="ARVROrigin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.28637, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/LeftController"]
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="RightController" type="ARVRController" parent="ARVROrigin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2859, 0, 0 )
 controller_id = 2
 
 [node name="MeshInstance" type="MeshInstance" parent="ARVROrigin/RightController"]
