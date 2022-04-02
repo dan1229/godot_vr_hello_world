@@ -1,11 +1,11 @@
 extends KinematicBody
 
 # How fast the player moves in meters per second.
-export var speed = 14
+export var speed = 16
 # The downward acceleration when in the air, in meters per second squared.
 export var fall_acceleration = 75
 # Vertical impulse applied to the character upon jumping in meters per second.
-export var jump_impulse = 20
+export var jump_impulse = 40
 
 onready var camera = $Pivot/Camera
 
@@ -35,12 +35,12 @@ func _physics_process(delta):
 	velocity.z = direction.z * speed
 	
 	# Jumping
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
+	if is_on_floor() and Input.is_action_pressed("jump"):
 		velocity.y += jump_impulse
 		
 	# fall
 	velocity.y -= fall_acceleration * delta
 
 	# Moving the character
-	velocity = move_and_slide_with_snap(velocity, Vector3.UP)
+	velocity = move_and_slide(velocity, Vector3.UP)
 	
