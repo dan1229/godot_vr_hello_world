@@ -8,6 +8,40 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "CameraRig",
+"language": "GDScript",
+"path": "res://Player/Camera/CameraRig.gd"
+}, {
+"base": "State",
+"class": "CameraState",
+"language": "GDScript",
+"path": "res://Player/Camera/CameraState.gd"
+}, {
+"base": "Spatial",
+"class": "Mannequiny",
+"language": "GDScript",
+"path": "res://Player/Mannequiny.gd"
+}, {
+"base": "KinematicBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player/Player.gd"
+}, {
+"base": "State",
+"class": "PlayerState",
+"language": "GDScript",
+"path": "res://Player/PlayerState.gd"
+} ]
+_global_script_class_icons={
+"CameraRig": "",
+"CameraState": "",
+"Mannequiny": "",
+"Player": "",
+"PlayerState": ""
+}
+
 [application]
 
 config/name="vr"
