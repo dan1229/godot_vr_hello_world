@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://src/Player/Camera/CameraRig.gd" type="Script" id=1]
-[ext_resource path="res://src/Player/Camera/AimTarget.gd" type="Script" id=2]
-[ext_resource path="res://src/Player/Camera/States/Default.gd" type="Script" id=3]
-[ext_resource path="res://src/Main/StateMachine/StateMachine.gd" type="Script" id=4]
-[ext_resource path="res://assets/2d/reticle.png" type="Texture" id=5]
-[ext_resource path="res://src/Player/Camera/States/Camera.gd" type="Script" id=6]
-[ext_resource path="res://src/Player/Camera/States/Aim.gd" type="Script" id=7]
-[ext_resource path="res://src/Player/Camera/SpringArm.gd" type="Script" id=8]
+[ext_resource path="res://Player/Camera/CameraRig.gd" type="Script" id=1]
+[ext_resource path="res://Player/Camera/AimTarget.gd" type="Script" id=2]
+[ext_resource path="res://Player/Camera/States/Default.gd" type="Script" id=3]
+[ext_resource path="res://Main/StateMachine/StateMachine.gd" type="Script" id=4]
+[ext_resource path="res://art/reticle.png" type="Texture" id=5]
+[ext_resource path="res://Player/Camera/States/Camera.gd" type="Script" id=6]
+[ext_resource path="res://Player/Camera/States/Aim.gd" type="Script" id=7]
+[ext_resource path="res://Player/Camera/SpringArm.gd" type="Script" id=8]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 0.5
