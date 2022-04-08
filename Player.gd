@@ -7,9 +7,16 @@ export var fall_acceleration = 75
 # Vertical impulse applied to the character upon jumping in meters per second.
 export var jump_impulse = 40
 
-onready var camera = $Pivot/Camera
+# camera
+var minLookAngle : float = -90.0
+var maxLookAngle : float = 90.0
+var lookSensitivity : float = 10.0
+onready var camera = $ARVROrigin/ARVRCamera
 
+# vectors
 var velocity = Vector3.ZERO
+var mouseDelta : Vector2 = Vector2()
+
 
 func get_input_direction():
 	# We create a local variable to store the input direction.
@@ -34,8 +41,8 @@ func _physics_process(delta):
 	# normalize direction
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
-		$Pivot.look_at(translation + direction, Vector3.UP)
-		look_at(transform.origin + velocity, Vector3.UP)		
+		$Pivot.look_at(translation + direction, Vector3.UP)  # rotate player body itself
+		look_at(transform.origin + velocity, Vector3.UP)  # rotate camera
 
 	# Ground velocity
 	velocity.x = direction.x * speed
@@ -51,3 +58,4 @@ func _physics_process(delta):
 	# Moving the character
 	velocity = move_and_slide(velocity, Vector3.UP)
 	
+

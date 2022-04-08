@@ -15,7 +15,7 @@ size = Vector3( 0.1, 0.1, 0.1 )
 size = Vector3( 0.1, 0.1, 0.1 )
 
 [node name="Player" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.114468, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00344849, 0.11447, -0.0316038 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -31,7 +31,7 @@ transform = Transform( -0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.58636, 0 )
 
 [node name="ARVRCamera" type="ARVRCamera" parent="ARVROrigin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793262, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0816, 24.0925 )
 
 [node name="LeftController" type="ARVRController" parent="ARVROrigin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44129, 0, 0 )
